@@ -1,14 +1,17 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import ButtonIcon from 'components/ButtonIcon';
+import TestChildren from 'components/TestChildren';
 import { Link } from 'react-router-dom';
-import { getTokenData, isAuthenticated } from 'utils/requests';
 import './styles.css'
 
 const Home = () => {
   return (
     <div className="home-container">
 
-      <h1>{isAuthenticated() ? 'autenticado' : 'NÃO autenticado'}</h1>
+      <TestChildren price={234.56}>
+        <h2>Conteúdo 1</h2>
+        <h2>Conteúdo 2</h2>
+      </TestChildren> 
 
       <div className="base-card home-card">
         <div className="home-content-container">
@@ -28,8 +31,6 @@ const Home = () => {
         </div>
 
       </div>
-
-
     </div>
   );
 };
