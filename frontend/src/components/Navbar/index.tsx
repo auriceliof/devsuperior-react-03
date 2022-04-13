@@ -9,6 +9,7 @@ import { AuthContext } from 'AuthContext';
 const Navbar = () => {
 
   const { authContextData, setAuthContextData } = useContext(AuthContext);
+  
   useEffect(() => {
     if (isAuthenticated()) {
       setAuthContextData({
