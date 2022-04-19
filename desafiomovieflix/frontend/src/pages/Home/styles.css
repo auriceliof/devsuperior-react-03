@@ -1,0 +1,25 @@
+.home-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 35px;
+}
+
+.home-card-movie {
+    color: #FFF;
+}
+
+.home-card-movie h1 {
+    font-size: 2em;
+    letter-spacing: 0.085em;
+    margin-top: 45px;
+    margin-left: 30px;
+}
+
+.home-card-movie p {
+    font-size: 1em;
+    width: 320px;
+    letter-spacing: -0.015em;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}

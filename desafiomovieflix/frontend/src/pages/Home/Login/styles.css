@@ -1,0 +1,31 @@
+.login-card {
+    width: 479px;
+    height: 573px;
+    font-size: 16px;
+    padding: 50px;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+    color: #FFF;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.base-input {
+    margin-bottom: 30px;
+}
+
+.base-input input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.btn-Login {
+    margin-top: 70px;
+}
