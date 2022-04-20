@@ -1,0 +1,33 @@
+.movie-container {
+    padding: 15px;
+    color: #FFF;
+    margin-left: 10px;
+}
+
+.movie-card h1 {
+    font-size: 1.5em;
+    letter-spacing: 0.085em;
+    margin-bottom: 50px;
+}
+
+.movie-content h5 {
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0.085em;
+    margin-bottom: 12px;  
+}
+
+@media (min-width: 576px) {
+    .movie-container {
+        margin: 30px 0 0 40px;
+    } 
+
+    .movie-card h1 {
+        font-size: 2em;
+    }
+
+    .movie-content h5 {
+        font-size: 1.6em;
+    }
+}
+

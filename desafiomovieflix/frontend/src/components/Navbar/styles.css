@@ -7,9 +7,11 @@
 }
 
 .navbar-nav-container h2 {
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
-.btn-navbar {
-    display: none;
+@media (min-width: 576px) {
+    .navbar-nav-container h2 {
+        margin-left: 40px;
+    } 
 }
