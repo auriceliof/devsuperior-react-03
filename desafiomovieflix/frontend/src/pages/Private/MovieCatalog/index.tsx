@@ -1,18 +1,15 @@
-import Navbar from 'components/Navbar';
 import './styles.css'
 
-const Movie = () => {
+const MovieCatalog = () => {
   return (
     <>
-      <Navbar />
+      <div className="movieCatalog-container">
 
-      <div className="movie-container">
-
-          <div className="movie-card">
+          <div className="movieCatalog-card">
                 <h1>Tela listagem de filmes</h1>
           </div>
 
-          <div className="movie-content">
+          <div className="movieCatalog-content">
               <h5>Acessar /movies/1</h5>
               <h5>Acessar /movies/2</h5>
           </div>
@@ -22,4 +19,5 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default MovieCatalog;
+

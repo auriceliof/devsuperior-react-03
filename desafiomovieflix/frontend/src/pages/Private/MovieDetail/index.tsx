@@ -1,4 +1,3 @@
-import Navbar from "components/Navbar"
 import Note from "./Note";
 import Rate from "./Rate";
 import './styles.css'
@@ -6,7 +5,6 @@ import './styles.css'
 const MovieDetail = () => {
     return (
         <>
-            <Navbar />
             <div className="moviedetail-container">
 
                 <div className="moviedetail-card-movie">

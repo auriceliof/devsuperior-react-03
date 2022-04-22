@@ -1,4 +1,3 @@
-import Navbar from "components/Navbar"
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import Login from "./Login";
 import './styles.css'
@@ -6,7 +5,6 @@ import './styles.css'
 const Home = () => {
     return (
         <>
-            <Navbar />
             <div className="home-container">
 
                 <div className="home-card-movie">

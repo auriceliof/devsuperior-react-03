@@ -1,10 +1,10 @@
 import './App.css';
 import './assets/styles/custom.scss';
-import MovieDetail from 'pages/MovieDetail';
+import Routes from 'Routes';
 
 function App() {
   return (
-    <MovieDetail />
+    <Routes />
   );
 }
 
