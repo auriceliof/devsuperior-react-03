@@ -1,0 +1,55 @@
+.rate-card {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.base-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.base-input input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.btn-rate {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .rate-card {
+      padding: 30px;
+    }
+
+    .base-input {
+        margin-bottom: 30px;
+    }
+
+    .base-input input {
+        font-size: 1.5em
+    }
+
+    .btn-rate {
+        display: flex;
+        justify-content: center;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .rate-card {
+        padding: 30px;
+      }
+  
+      .base-input {
+          margin-bottom: 30px;
+      }
+  
+      .base-input input {
+          font-size: 1.5em
+      }  
+}

@@ -1,10 +1,10 @@
 import './App.css';
 import './assets/styles/custom.scss';
-import Movie from 'pages/Movie';
+import MovieDetail from 'pages/MovieDetail';
 
 function App() {
   return (
-    <Movie />
+    <MovieDetail />
   );
 }
 
