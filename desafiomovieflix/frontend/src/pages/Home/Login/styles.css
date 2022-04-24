@@ -17,6 +17,7 @@
 }
 
 .base-input {
+    background-color: #FFF;
     margin-bottom: 30px;
 }
 
@@ -27,6 +28,7 @@
 }
 
 .btn-Login {
+    width: 100%;
     margin-top: 70px;
 }
 

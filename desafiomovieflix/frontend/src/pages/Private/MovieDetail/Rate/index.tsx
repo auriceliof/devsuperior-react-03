@@ -10,7 +10,7 @@ const Rate = () => {
             </div>
 
             <div className="btn-rate">
-                <ButtonIcon text="salvar avaliação"/>
+                <ButtonIcon text="salvar avaliação" />
             </div>
 
         </div>

@@ -10,9 +10,3 @@
     text-transform: uppercase;
     letter-spacing: -0.015em;
 }
-
-@media(min-width: 768px) {
-    .btn-container {
-        width: 50%;
-    }
-}
