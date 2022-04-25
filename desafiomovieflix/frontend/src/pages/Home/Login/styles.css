@@ -36,6 +36,11 @@
     margin-top: 70px;
 }
 
+.invalid-feedback {
+    color: #610B0B;
+    font-weight: 700;
+}
+
 @media (min-width: 576px) {
     .login-card {
       width: 400px;
