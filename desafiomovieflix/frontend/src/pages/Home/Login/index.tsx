@@ -1,9 +1,10 @@
 import ButtonIcon from 'components/ButtonIcon';
 import { useForm } from 'react-hook-form';
+import { requestBackendLogin } from 'utils/requests';
 import './styles.css';
 
 type FormData = {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -12,7 +13,13 @@ const Login = () => {
   const { register, handleSubmit } = useForm<FormData>();
 
   const onSubmit = ( formData : FormData ) => {
-    console.log(formData);
+    requestBackendLogin(formData)
+    .then(response => {
+      console.log('SUCESSO', response);
+    })
+    .catch(error => {
+      console.log('ERRO', error);
+    });    
   };
 
   return (
@@ -23,16 +30,16 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='mb-4'>
           <input
-            {...register("email")}
+            {...register('username')}
             type="text"
             className="form-control base-input"
             placeholder="Email"
-            name="email"
+            name="username"
           />
         </div>
         <div className='mb-4'>
           <input
-            {...register("password")}
+            {...register('password')}
             type="password"
             className="form-control base-input"
             placeholder="Password"
