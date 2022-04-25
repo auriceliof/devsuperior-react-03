@@ -16,7 +16,7 @@ const Home = () => {
                         <MainImage />
                     </div>
                 </div>
-                <div>
+                <div className="login-form-container">
                     <Login />
                 </div>
                 
