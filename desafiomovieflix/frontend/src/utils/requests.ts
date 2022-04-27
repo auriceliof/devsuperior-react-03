@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 
 export const BASE_URL = process.env.HEROKU_APP_BACKEND_URL ?? 'https://movieflix-devsuperior.herokuapp.com';
@@ -44,8 +44,18 @@ export const requestBackendLogin = ( loginData : LoginData ) => {
     });
 };
 
+export const requestBackend = ( config: AxiosRequestConfig ) => {
+    const headers = config.withCredentials
+        ? {
+            ...config.headers,
+            Authorization: 'Bearer ' + getAuthData().access_token,
+        }
+        : config.headers;
+    return axios({ ...config, baseURL: BASE_URL, headers });
+};
+
 export const saveAuthData = (obj: LoginResponse) => {
-    localStorage.setItem( 'authData', JSON.stringify(obj) );
+    localStorage.setItem( tokenKey, JSON.stringify(obj) );
 }
 
 export const getAuthData = () => {
