@@ -64,6 +64,10 @@ export const getAuthData = () => {
     return JSON.parse(str) as LoginResponse;
 }
 
+export const removeAuthData = () => {
+    localStorage.removeItem(tokenKey)
+}
+
 // REQUEST interceptor
 axios.interceptors.request.use(function (config) {
         console.log('INTERCEPTOR ANTES DA REQUISIÇÃO');
