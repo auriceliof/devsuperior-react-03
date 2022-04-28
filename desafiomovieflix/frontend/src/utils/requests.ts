@@ -1,5 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
+import history from './history';
 
 export const BASE_URL = process.env.HEROKU_APP_BACKEND_URL ?? 'https://movieflix-devsuperior.herokuapp.com';
 
@@ -63,7 +64,7 @@ export const getAuthData = () => {
     return JSON.parse(str) as LoginResponse;
 }
 
-// Add a request interceptor
+// REQUEST interceptor
 axios.interceptors.request.use(function (config) {
         console.log('INTERCEPTOR ANTES DA REQUISIÇÃO');
     return config;
@@ -72,12 +73,15 @@ axios.interceptors.request.use(function (config) {
     return Promise.reject(error);
   });
 
-// Add a response interceptor
+// RESPONSE interceptor
 axios.interceptors.response.use(function (response) {
         console.log('INTERCEPTOR RESPOSTA COM SUCESSO');
     return response;
   }, function (error) {
         console.log('INTERCEPTOR RESPOSTA COM ERRO');
+        if ( error.response.status === 401 || error.response.status === 403 ) {
+            history.push('/')
+        }
     return Promise.reject(error);
   });
   

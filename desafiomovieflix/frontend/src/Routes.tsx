@@ -2,11 +2,12 @@ import Navbar from "components/Navbar";
 import Home from "pages/Home";
 import MovieCatalog from "pages/Private/MovieCatalog";
 import MovieDetail from "pages/Private/MovieDetail";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {  Route, Router, Switch } from "react-router-dom";
+import history from "utils/history";
 
 const Routes = () => (
     
-    <BrowserRouter>
+    <Router history={history}>
         <Navbar />
         <Switch>
            
@@ -18,13 +19,13 @@ const Routes = () => (
                 <MovieCatalog />
             </Route>
 
-            <Route path="/movies/:movieid" exact>
+            <Route path="/movies/:movieid" >
                 <MovieDetail />
             </Route>
 
         </Switch>
 
-    </BrowserRouter>
+    </Router>
 )
 
 export default Routes;
