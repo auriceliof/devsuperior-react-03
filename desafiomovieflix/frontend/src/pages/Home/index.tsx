@@ -1,5 +1,5 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
-import { getTokenData } from 'utils/auth';
+import { isAuthenticated } from 'utils/auth';
 import Login from "./Login";
 import './styles.css'
 
@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <div className="home-container">
 
-                <h1>{getTokenData()?.user_name}</h1>
+                <h1>{isAuthenticated() ? 'Autenticado' : 'NÃO Autenticado'}</h1>
 
                 <div className="home-card-movie">
                     <div className="home-content-container">
