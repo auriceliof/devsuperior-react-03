@@ -1,36 +1,32 @@
-import { useEffect, useState } from 'react';
-import { getTokenData, isAuthenticated, TokenData } from 'utils/auth';
+import { AuthContext } from 'AuthContext';
+import { useContext, useEffect } from 'react';
+import { getTokenData, isAuthenticated } from 'utils/auth';
 import history from 'utils/history';
 import { removeAuthData } from 'utils/requests';
 import './styles.css';
 
-type AuthData = {
-    authenticated: boolean,
-    tokenData?: TokenData
-}
-
 const Navbar = () => {
 
-    const [ authData, setAuthData ] = useState<AuthData>({authenticated: false});
+    const { authContextData, setAuthContextData } = useContext(AuthContext);
 
     useEffect(() => {
         if (isAuthenticated()) {
-            setAuthData({
+            setAuthContextData({
                 authenticated: true,
-                tokenData: getTokenData()
+                tokeData: getTokenData()               
             })
         }
         else {
-            setAuthData({
+            setAuthContextData({
                 authenticated: false
             })
         }
-    }, [])
+    }, [setAuthContextData])
 
     const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault();
         removeAuthData();
-        setAuthData ({
+        setAuthContextData ({
             authenticated: false
         });
         history.replace('/');
@@ -44,7 +40,7 @@ const Navbar = () => {
                 </a>
             </div>
             <div >
-                {authData.authenticated ? (
+                {authContextData.authenticated ? (
                     <>
                         <a href="#logout" onClick={handleLogoutClick} className='nav-logout'>Sair</a>
                     </>

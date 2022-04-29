@@ -1,8 +1,10 @@
+import { AuthContext } from 'AuthContext';
 import ButtonIcon from 'components/ButtonIcon';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { getAuthData, requestBackendLogin, saveAuthData } from 'utils/requests';
+import { getTokenData } from 'utils/auth';
+import { requestBackendLogin, saveAuthData } from 'utils/requests';
 import './styles.css';
 
 type FormData = {
@@ -11,6 +13,8 @@ type FormData = {
 }
 
 const Login = () => {
+
+  const { setAuthContextData } = useContext(AuthContext);
 
   const [ hasError, setHasError ] = useState(false);
 
@@ -22,10 +26,11 @@ const Login = () => {
     requestBackendLogin(formData)
     .then(response => {
       saveAuthData(response.data);
-      const token = getAuthData().access_token;
-      console.log('TOKEN GERADO: ' + token);
       setHasError(false);
-      console.log('SUCESSO', response);
+      setAuthContextData({
+        authenticated: true,
+        tokeData: getTokenData(),              
+    })
       history.push('/movies');
     })
     .catch(error => {
