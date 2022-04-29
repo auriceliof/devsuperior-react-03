@@ -43,11 +43,10 @@ const Navbar = () => {
                     <h2>MovieFlix</h2>
                 </a>
             </div>
-            <div>
+            <div >
                 {authData.authenticated ? (
                     <>
-                        <span>{authData.tokenData?.user_name}</span>
-                        <a href="#logout" onClick={handleLogoutClick}>Sair</a>
+                        <a href="#logout" onClick={handleLogoutClick} className='nav-logout'>Sair</a>
                     </>
                 ) : (
                     ''
