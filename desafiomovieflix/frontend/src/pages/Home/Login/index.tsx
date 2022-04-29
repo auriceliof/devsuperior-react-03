@@ -2,7 +2,7 @@ import { AuthContext } from 'AuthContext';
 import ButtonIcon from 'components/ButtonIcon';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { getTokenData } from 'utils/auth';
 import { requestBackendLogin, saveAuthData } from 'utils/requests';
 import './styles.css';
@@ -12,7 +12,15 @@ type FormData = {
   password: string;
 }
 
+type LocationState = {
+  from: string;
+}
+
 const Login = () => {
+
+  const location = useLocation<LocationState>();
+
+  const { from } = location.state || { from: { pathname: '/movies'} };
 
   const { setAuthContextData } = useContext(AuthContext);
 
@@ -31,7 +39,7 @@ const Login = () => {
         authenticated: true,
         tokeData: getTokenData(),              
     })
-      history.push('/movies');
+      history.replace(from);
     })
     .catch(error => {
       setHasError(true);
