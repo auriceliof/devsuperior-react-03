@@ -1,4 +1,4 @@
-.rate-card {
+.review-card {
     width: 100%;
     font-size: 16px;
     padding: 10px;
@@ -16,13 +16,13 @@
     padding: 10px;
 }
 
-.btn-rate {
+.btn-review {
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-    .rate-card {
+    .review-card {
       padding: 30px;
     }
 
@@ -30,7 +30,7 @@
         font-size: 1.5em
     }
 
-    .btn-rate {
+    .btn-review {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -38,7 +38,7 @@
 }
   
 @media (min-width: 1200px) {
-    .rate-card {
+    .review-card {
         padding: 30px;
       }
   
@@ -50,3 +50,4 @@
           font-size: 1.5em
       }  
 }
+

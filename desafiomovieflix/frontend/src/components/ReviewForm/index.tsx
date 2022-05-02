@@ -1,68 +1,69 @@
-import { AxiosRequestConfig } from "axios";
-import { useForm } from "react-hook-form";
-import { requestBackend } from "utils/requests";
+import { AxiosRequestConfig } from 'axios';
+import ButtonIcon from 'components/ButtonIcon';
+import { useForm } from 'react-hook-form';
+import { requestBackend } from 'utils/requests';
+import './styles.css';
 
 type Props = {
-    movieId: string;
+  movieId: string;
 };
 
 type FormData = {
-    movieId: number;
-    text: string;
+  movieId: number;
+  text: string;
 };
 
-const ReviewForm = ({ movieId } : Props) =>{
+const ReviewForm = ({ movieId }: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useForm<FormData>();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors } 
-    } = useForm<FormData>();
+  const onSubmit = (formData: FormData) => {
+    formData.movieId = parseInt(movieId);
+    console.log(formData);
 
-    const onSubmit = ( formData: FormData) => {
-        formData.movieId = parseInt(movieId);
-        console.log(formData);
-
-        const config: AxiosRequestConfig = {
-            method: 'POST',
-            url: 'reviews',
-            data: formData,
-            withCredentials: true,
-        };
-
-        requestBackend(config)
-        .then(response => {
-            console.log("SUCESSO AO SALVAR", response);
-        })
-        .catch(error => {
-            console.log("ERRO AO SALVAR", error)
-        });
+    const config: AxiosRequestConfig = {
+      method: 'POST',
+      url: '/reviews',
+      data: formData,
+      withCredentials: true,
     };
 
-    return (
-        <div>
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                        <input 
-                            {...register('text', {
-                                required: "Campo obrigatório",
-                            })}
-                            type="text"
-                            name="text"
-                            placeholder="Deixe sua avaliação aqui"
-                        />
-                        <div>
-                            {errors.text?.message}
-                        </div>
-                    </div>
-                    <button type="submit">
-                        SALVAR AVALIAÇÃO
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
+    requestBackend(config)
+      .then((response) => {
+        setValue('text', '');
+        console.log('SUCESSO AO SALVAR', response);
+      })
+      .catch((error) => {
+        console.log('ERRO AO SALVAR', error);
+      });
+  };
+
+  return (
+    <div className="base-card review-card">
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="base-input">
+            <input
+              {...register('text', {
+                required: 'Campo obrigatório',
+              })}
+              type="text"
+              name="text"
+              placeholder="Deixe sua avaliação aqui"
+            />
+            <div>{errors.text?.message}</div>
+          </div>
+          <div className="btn-review">
+            <ButtonIcon text="salvar avaliação" />
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default ReviewForm;

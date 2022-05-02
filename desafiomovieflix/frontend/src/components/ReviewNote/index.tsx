@@ -1,6 +1,6 @@
 import './styles.css';
 
-const Note = () => {
+const ReviewNote = () => {
   return (
     <div className="base-card note-card">
       <div className="note-container">
@@ -114,4 +114,4 @@ const Note = () => {
   );
 };
 
-export default Note;
+export default ReviewNote;

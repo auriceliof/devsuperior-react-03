@@ -1,16 +1,32 @@
-import { useEffect } from 'react';
+import { AxiosRequestConfig } from 'axios';
+import ReviewForm from 'components/ReviewForm';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Review } from 'types/review';
+import { requestBackend } from 'utils/requests';
 import './styles.css';
 
-type UrlParams = {
+type urlParams = {
   movieId: string;
 };
 
 const MovieDetail = () => {
   
-  const { movieId } = useParams<UrlParams>();
+  const { movieId } = useParams<urlParams>();
+  
+  const [ reviews, setReviews ] = useState<Review[]>([]);
 
-  useEffect(() => {}, [movieId]);
+  useEffect(() => {
+    const config: AxiosRequestConfig = {
+      method: 'GET',
+      url: `/movies/${movieId}/reviews`,
+      withCredentials: true,
+    };
+    requestBackend(config)
+    .then((response) => {
+      setReviews(response.data);
+    });
+  }, [movieId]);
 
   return (
     <div className="moviedetail-container">
@@ -20,6 +36,9 @@ const MovieDetail = () => {
         </div>
         <div>
           <h1> id: {movieId} </h1>
+        </div>
+        <div>
+          <ReviewForm movieId={movieId} />
         </div>
       </div>
     </div>
