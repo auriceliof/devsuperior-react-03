@@ -1,9 +1,16 @@
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './styles.css';
 
-
+type UrlParams = {
+  movieId: string;
+};
 
 const MovieDetail = () => {
+  
+  const { movieId } = useParams<UrlParams>();
 
+  useEffect(() => {}, [movieId]);
 
   return (
     <div className="moviedetail-container">
@@ -12,7 +19,7 @@ const MovieDetail = () => {
           <h1> Tela detalhes do filme </h1>
         </div>
         <div>
-          <h1> id:  </h1>
+          <h1> id: {movieId} </h1>
         </div>
       </div>
     </div>
