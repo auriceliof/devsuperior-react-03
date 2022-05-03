@@ -2,9 +2,9 @@ import './styles.css';
 
 const ReviewNote = () => {
   return (
-    <div className="base-card note-card">
-      <div className="note-container">
-        <div className="note-star">
+    <div className="base-card reviewnote-card">
+      <div className="reviewnote-container">
+        <div className="reviewnote-star">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -20,18 +20,18 @@ const ReviewNote = () => {
             />
           </svg>
         </div>
-        <div className="note-user">
+        <div className="reviewnote-user">
           <h4>Maria Silva</h4>
         </div>
       </div>
-      <div className="base-input note">
+      <div className="base-input reviewnote">
         <h6>
           Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
         </h6>
       </div>
 
-      <div className="note-container">
-        <div className="note-star">
+      <div className="reviewnote-container">
+        <div className="reviewnote-star">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -47,18 +47,18 @@ const ReviewNote = () => {
             />
           </svg>
         </div>
-        <div className="note-user">
+        <div className="reviewnote-user">
           <h4>Maria Silva</h4>
         </div>
       </div>
-      <div className="base-input note">
+      <div className="base-input reviewnote">
         <h6>
           Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
         </h6>
       </div>
 
-      <div className="note-container">
-        <div className="note-star">
+      <div className="reviewnote-container">
+        <div className="reviewnote-star">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -74,18 +74,18 @@ const ReviewNote = () => {
             />
           </svg>
         </div>
-        <div className="note-user">
+        <div className="reviewnote-user">
           <h4>Maria Silva</h4>
         </div>
       </div>
-      <div className="base-input note">
+      <div className="base-input reviewnote">
         <h6>
           Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
         </h6>
       </div>
 
-      <div className="note-container">
-        <div className="note-star">
+      <div className="reviewnote-container">
+        <div className="reviewnote-star">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -101,11 +101,11 @@ const ReviewNote = () => {
             />
           </svg>
         </div>
-        <div className="note-user">
+        <div className="reviewnote-user">
           <h4>Maria Silva</h4>
         </div>
       </div>
-      <div className="base-input note">
+      <div className="base-input reviewnote">
         <h6>
           Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
         </h6>

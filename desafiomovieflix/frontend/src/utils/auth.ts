@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { getAuthData } from "./requests";
 
-export type Role = 'ROLE_VISITOR | ROLE_MEMBER'
+export type Role = 'ROLE_VISITOR' | 'ROLE_MEMBER';
 
 export type TokenData = {
     exp: number;
@@ -23,3 +23,20 @@ export const isAuthenticated = () : boolean => {
     return TokenData && TokenData.exp * 1000 > Date.now() ? true : false;
 };
 
+export const hasAnyRoles = ( roles: Role[]): boolean => {
+    if (roles.length === 0 ){
+        return true;
+    }
+
+    const tokenData = getTokenData();
+
+    if ( tokenData !== undefined ) {
+        for ( var i = 0; i < roles.length; i++) {
+            if ( tokenData.authorities.includes(roles[i])) {
+                return true;
+            }
+        }        
+    }
+
+    return false;
+}

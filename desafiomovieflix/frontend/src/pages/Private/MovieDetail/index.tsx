@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import ReviewForm from 'components/ReviewForm';
+import ReviewNote from 'components/ReviewNote';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Review } from 'types/review';
@@ -14,7 +15,7 @@ const MovieDetail = () => {
   
   const { movieId } = useParams<urlParams>();
   
-  const [ reviews, setReviews ] = useState<Review[]>([]);
+  const [ , setReviews ] = useState<Review[]>([]);
 
   useEffect(() => {
     const config: AxiosRequestConfig = {
@@ -40,6 +41,7 @@ const MovieDetail = () => {
         <div>
           <ReviewForm movieId={movieId} />
         </div>
+          <ReviewNote />
       </div>
     </div>
   );

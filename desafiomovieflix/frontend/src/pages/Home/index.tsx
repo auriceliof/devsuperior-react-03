@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <div className="home-container">
-
+               
                 <div className="home-card-movie">
                     <div className="home-content-container">
                         <h1>Avalie Filmes</h1>

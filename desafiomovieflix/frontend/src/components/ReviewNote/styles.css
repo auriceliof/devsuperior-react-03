@@ -1,28 +1,28 @@
-.note-card {
+.reviewnote-card {
     width: 100%;
     font-size: 16px;
     padding: 10px;
     margin-top: 20px;
 }
 
-.note-container {
+.reviewnote-container {
     display: flex;
     align-items: center;
 }
 
-.note-card svg {
+.reviewnote-card svg {
     width: 20px;
     height: 20px;
     color: #FFC700;
 }
 
-.note-card h4 {
+.reviewnote-card h4 {
     font-size: 1em;
     margin-left: 10px;
     margin-top: 5px;
 }
 
-.base-input.note {
+.base-input.reviewnote {
     height: 5em;
     font-size: 0.9em;
     text-align: justify;
@@ -33,15 +33,15 @@
 
 
 @media (min-width: 768px) {
-    .note-card { 
+    .reviewnote-card { 
       padding: 30px;
     }
 
-    .note-card h4, .note-card h6 {
+    .reviewnote-card h4, .reviewnote-card h6 {
         font-size: 1.5em;
     }
 
-    .base-input.note {
+    .base-input.reviewnote {
         height: 7em;
         margin-bottom: 20px;
         padding: 15px;
@@ -49,17 +49,18 @@
 }
   
 @media (min-width: 1200px) {
-    .note-card {
+    .reviewnote-card {
       padding: 40px;
     }
 
-    .note-card h4, .note-card h6 {
+    .reviewnote-card h4, .reviewnote-card h6 {
         font-size: 1.8em;
     }
 
-    .base-input.note {
+    .base-input.reviewnote {
         height: 7em;
         margin-bottom: 20px;
         padding: 15px;
     }
 }
+
