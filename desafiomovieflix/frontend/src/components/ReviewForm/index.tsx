@@ -55,7 +55,9 @@ const ReviewForm = ({ movieId }: Props) => {
               name="text"
               placeholder="Deixe sua avaliação aqui"
             />
-            <div>{errors.text?.message}</div>
+            <div className='invalid-feedback d-block'>
+              {errors.text?.message}
+            </div>
           </div>
           <div className="btn-review">
             <ButtonIcon text="salvar avaliação" />

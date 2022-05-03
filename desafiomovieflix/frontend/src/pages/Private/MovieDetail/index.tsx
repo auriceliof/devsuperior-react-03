@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import ReviewForm from 'components/ReviewForm';
-import ReviewNote from 'components/ReviewNote';
+import ReviewListing from 'components/ReviewListing';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Review } from 'types/review';
@@ -44,7 +44,9 @@ const MovieDetail = () => {
             <ReviewForm movieId={movieId} />
           )}
         </div>
-          <ReviewNote />
+        <div>
+          <ReviewListing />
+        </div>
       </div>
     </div>
   );
