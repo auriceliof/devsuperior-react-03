@@ -4,6 +4,7 @@ import ReviewNote from 'components/ReviewNote';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Review } from 'types/review';
+import { hasAnyRoles } from 'utils/auth';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
@@ -39,7 +40,9 @@ const MovieDetail = () => {
           <h1> id: {movieId} </h1>
         </div>
         <div>
-          <ReviewForm movieId={movieId} />
+          {hasAnyRoles(['ROLE_MEMBER']) && (
+            <ReviewForm movieId={movieId} />
+          )}
         </div>
           <ReviewNote />
       </div>
