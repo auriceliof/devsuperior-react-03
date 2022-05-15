@@ -4,6 +4,6 @@ export type Movie = {
     id: number;
     text: string;
     movieId: number;
-    user: User [];
+    user: User;
 }
 

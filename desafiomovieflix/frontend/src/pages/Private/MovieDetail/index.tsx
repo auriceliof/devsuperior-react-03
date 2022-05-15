@@ -16,7 +16,7 @@ const MovieDetail = () => {
   
   const { movieId } = useParams<urlParams>();
   
-  const [ , setReviews ] = useState<Review[]>([]);
+  const [ reviews, setReviews ] = useState<Review[]>([]);
 
   useEffect(() => {
     const config: AxiosRequestConfig = {
@@ -34,18 +34,15 @@ const MovieDetail = () => {
     <div className="moviedetail-container">
       <div className="moviedetail-card-movie">
         <div>
-          <h1> Tela detalhes do filme </h1>
-        </div>
-        <div>
-          <h1> id: {movieId} </h1>
+          <h1> Tela detalhes do filme id: {movieId} </h1>
         </div>
         <div>
           {hasAnyRoles(['ROLE_MEMBER']) && (
-            <ReviewForm movieId={movieId} />
+              <ReviewForm movieId={movieId} />
           )}
         </div>
         <div>
-          <ReviewListing />
+          <ReviewListing reviews={reviews}/>
         </div>
       </div>
     </div>
